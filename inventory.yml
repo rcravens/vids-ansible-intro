@@ -1,0 +1,36 @@
+---
+jump_box:
+  hosts:
+    box1:
+      ansible_host: 34.227.194.94
+  vars:
+    ansible_user: ubuntu
+    ansible_private_key_file: ~/Desktop/laravel_demo/laravel_demo.pem
+
+swarm_manager:
+  hosts:
+    manager1:
+      ansible_host: 100.25.163.195
+  vars:
+    ansible_user: ubuntu
+    ansible_private_key_file: ~/.ssh/xyz-ec2-key-pair.pem
+
+swarm_workers:
+  hosts:
+    worker1:
+      ansible_host: 3.90.82.62
+    worker2:
+      ansible_host: 100.26.158.106
+  vars:
+    ansible_user: ubuntu
+    ansible_private_key_file: ~/.ssh/xyz-ec2-key-pair.pem
+
+swarm:
+  children:
+    swarm_manager:
+    swarm_workers:
+
+all:
+  children:
+    jump_box:
+    swarm:

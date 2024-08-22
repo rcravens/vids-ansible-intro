@@ -1,0 +1,24 @@
+---
+- name: Provision EC2 instances in AWS.
+  hosts: localhost
+  connection: local
+  vars_files:
+    - settings.yml
+
+  tasks:
+    - debug: var=aws_key_pair_name
+
+    - name: "Provision new EC2 instances."
+      amazon.aws.ec2_instance:
+        key_name: "{{ aws_key_pair_name }}"
+        image_id: "{{ aws_ami }}"
+        instance_type: "{{ aws_default_instance_type }}"
+        vpc_subnet_id: "{{ aws_subnet_id }}"
+        network:
+          assign_public_ip: yes
+        tags: "{{ ec2_tags }}"
+        wait: yes
+        exact_count: 1
+      register: ec2
+
+    - debug: var=ec2

@@ -1,0 +1,25 @@
+---
+- name: Variables, Variable Files, and Secrets.
+  hosts: localhost
+  connection: local
+  gather_facts: false
+  vars:
+    var1: "This is variable 1."
+    var2: 123456
+    var3: "{{var1}} | {{var2}}"
+  vars_files:
+    - settings.yml
+    - secrets.yml
+  tasks:
+    # From the local vars
+    - debug: var=var1
+    - debug: var=var2
+    - debug: var=var3
+
+    # From the settings.yml file
+    - debug: var=app_name
+    - debug: var=author
+    - debug: var=api_token
+
+    # From the secrets.yml file
+    - debug: var=secret_message

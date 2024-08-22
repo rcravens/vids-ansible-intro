@@ -1,0 +1,10 @@
+---
+aws_key_pair_name: "laravel_demo"
+aws_region: "us-east-1"
+aws_ami: "ami-0a0e5d9c7acc336f1"
+aws_default_instance_type: "t2.micro"
+aws_subnet_id: "subnet-0b280140f83b0f79c"
+ec2_tags:
+  Name: "ansible_1"
+
+

@@ -1,0 +1,7 @@
+# Sets Up PHP Info Page
+
+- name: Sets Up PHP Info Page
+  ansible.builtin.template:
+    src: "files/index.php.j2"
+    dest: "/var/www/html/index.php"
+    force: true

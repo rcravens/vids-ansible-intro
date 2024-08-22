@@ -1,0 +1,7 @@
+---
+app_name: "ABC Application"
+# Notice that these variables are not defined yet...
+author: "{{author_first_name}} {{author_last_name}}"
+author_first_name: "Bob"
+author_last_name: "Cravens"
+api_token: "This is not secure"

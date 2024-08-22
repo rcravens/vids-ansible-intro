@@ -1,0 +1,18 @@
+# Nginx Configuration
+
+- name: Sets Nginx conf file
+  ansible.builtin.template:
+    src: "files/nginx.conf.j2"
+    dest: "/etc/nginx/sites-available/app.conf"
+    force: true
+
+- name: Enables new site
+  ansible.builtin.file:
+    src: "/etc/nginx/sites-available/app.conf"
+    dest: "/etc/nginx/sites-enabled/app.conf"
+    state: link
+
+- name: Removes "default" site
+  ansible.builtin.file:
+    path: "/etc/nginx/sites-enabled/default"
+    state: absent

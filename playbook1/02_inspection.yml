@@ -1,0 +1,44 @@
+---
+- name: Debugging, Groups, and Fact Data.
+  hosts: all
+  gather_facts: true
+  tasks:
+    - debug: msg="hello"
+
+#    - debug: msg="goodbye"
+#      run_once: true
+
+#    - debug: var=groups
+#      run_once: true
+
+#    - debug: var=hostvars
+#      run_once: true
+
+#    - name: Print out the IP address for each box
+#      debug:
+#        msg:
+#        - "box1: {{ hostvars.box1.ansible_default_ipv4.address }}"
+#        - "manager1: {{ hostvars['manager1'].ansible_default_ipv4.address }}"
+#        - "worker1: {{ hostvars.worker1.ansible_default_ipv4.address }}"
+#        - "worker2: {{ hostvars.worker2.ansible_default_ipv4.address }}"
+#      run_once: true
+
+#    - name: Debug using with_items
+#      debug: var=item
+#      with_items: "{{ groups.all }}"
+#      run_once: true
+
+#    - name: Debug IP addresses using with_items
+#      debug: msg="{{item}}- {{hostvars[item].ansible_default_ipv4.address}} "
+#      with_items: "{{ groups.all }}"
+#      run_once: true
+
+#    - name: Create IP Dictionary to Look Up Private IP Given Public.
+#      set_fact:
+#        private_ip_lut: "{{ private_ip_lut | default({})  | combine({item: hostvars[item].ansible_default_ipv4.address}) }}"
+#      with_items: "{{ groups.all }}"
+#      run_once: true
+#    - debug: var=private_ip_lut
+#      run_once: true
+#    - debug: var=private_ip_lut.box1
+#      run_once: true

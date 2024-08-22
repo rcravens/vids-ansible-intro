@@ -1,0 +1,18 @@
+---
+- name: My first play.
+  hosts: jump_box
+  tasks:
+    - name: Ping the server
+      ansible.builtin.ping:
+
+    - name: Ensure Nginx is started and enabled.
+      ansible.builtin.service:
+        name: nginx
+        state: started
+        enabled: true
+
+    - name: Inspect and gather facts about the host.
+      ansible.builtin.setup:
+      register: facts
+    - debug: var=facts
+
