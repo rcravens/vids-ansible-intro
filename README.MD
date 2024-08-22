@@ -55,7 +55,7 @@ A lot of other Infrastructure as Code / configuration management tools require m
 ## Examples
 The following introduce some basic building blocks and concepts. While this are simplistic in nature, you can springboard into your more complex configurations from here.
 > [!IMPORTANT]
-> The IP ADDRESSES in the `iventory.ini` and `inventory.yml` files **WILL NOT WORK** if you run these on your own. You will need to update those IP ADDRESSES to computers that you manage.
+> The IP ADDRESSES in the `inventory.ini` and `inventory.yml` files **WILL NOT WORK** if you run these on your own. You will need to update those IP ADDRESSES to computers that you manage.
 
 
 
