@@ -89,11 +89,21 @@ In the `playbook1` directory, there are the following examples:
 - `ansible-playbook playbook1/01_ad_hoc_examples.yml` (can shorten because of `ansible.cfg`)
 
 `02_inspection.yml` - Introduces: `hosts`, `gather_facts`, `groups`, `hostvars`, `run_once`, `with_items` and a few other concepts.
-- `ansible-playbook playbook2/playbook.yml`
+- `ansible-playbook playbook1/02_inspection.yml`
 
 `03_variables` - Introduces the use of variables.
+- `ansible-playbook playbook1/03_variables.yml`
+- `ansible encrypt playbook1/secrets.yml`
+- `ansible decrypt playbook1/secrets.yml`
+- `ansible decrypt playbook1/secrets.yml`
+- `ansible-playbook --ask-vault-pass playbook1/03_variables.yml`
+
+### Playbook #2
+In the `playbook2` directory, there is a single playbook that is used to demonstrate a more complex configuration of deploying a complete PHP application.
+
+- `ansible-playbook playbook2/playbook.yml`
+
+### Playbook #3
+In the `playbook3` directory we introduce using the Amazon AWS collection to provision an EC2 instance.
+
 - `ansible-playbook playbook3/playbook.yml`
-- `ansible encrypt playbook3/secrets.yml`
-- `ansible decrypt playbook3/secrets.yml`
-- `ansible decrypt playbook3/secrets.yml`
-- `ansible-playbook --ask-vault-pass playbook3/playbook.yml`
