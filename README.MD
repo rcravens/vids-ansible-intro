@@ -93,9 +93,9 @@ In the `playbook1` directory, there are the following examples:
 
 `03_variables` - Introduces the use of variables.
 - `ansible-playbook playbook1/03_variables.yml`
-- `ansible encrypt playbook1/secrets.yml`
-- `ansible decrypt playbook1/secrets.yml`
-- `ansible decrypt playbook1/secrets.yml`
+- `ansible-vault encrypt playbook1/secrets.yml`
+- `ansible-vault decrypt playbook1/secrets.yml`
+- `ansible-vault decrypt playbook1/secrets.yml`
 - `ansible-playbook --ask-vault-pass playbook1/03_variables.yml`
 
 ### Playbook #2
